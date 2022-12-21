@@ -1,0 +1,5 @@
+com\cts\onlineShopping\service\OnlineShoppingServiceTest.class
+com\cts\onlineShopping\controller\OnlineShoppingControllerTest.class
+com\cts\onlineShopping\service\UserDetailsServiceTest.class
+com\cts\onlineShopping\OnlineShoppingApplicationTests.class
+com\cts\onlineShopping\config\SecurityConfigTest.class

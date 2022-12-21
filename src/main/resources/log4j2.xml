@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" name="spring-boot-kafka-log" packages="com.cts.onlineShopping">
+    <Appenders>
+        <Kafka name="kafkaLogAppender" topic="log">
+            <PatternLayout pattern="%date %message"/>
+            <Property name="bootstrap.servers">pkc-41p56.asia-south1.gcp.confluent.cloud:9092</Property>
+            <Property name="sasl.jaas.config">org.apache.kafka.common.security.plain.PlainLoginModule required username='IA2LWQJXY6Z7GHON' password='C8f2JzUT8Q2oz2GciTMkMO9muv5MMxWv8fyTFRxOiKDLqLiUApGaEyBSPmDbZYzC';</Property>
+            <Property name="security.protocol">SASL_SSL</Property>
+            <Property name="sasl.mechanism">PLAIN</Property>
+        </Kafka>
+
+
+        <Console name="stdout" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5p [%-7t] %F:%L - %m%n"/>
+        </Console>
+
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="stdout"/>
+            <AppenderRef ref="kafkaLogAppender"/>
+        </Root>
+        <Logger name="org.apache.kafka" level="warn" />
+    </Loggers>
+</Configuration>
